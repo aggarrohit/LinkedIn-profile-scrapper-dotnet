@@ -34,3 +34,9 @@
 /Users/rohitagarwal/Desktop/practice/pwc-test/LinkedinScrapper/obj/Debug/net8.0/LinkedinScrapper.pdb
 /Users/rohitagarwal/Desktop/practice/pwc-test/LinkedinScrapper/obj/Debug/net8.0/LinkedinScrapper.genruntimeconfig.cache
 /Users/rohitagarwal/Desktop/practice/pwc-test/LinkedinScrapper/obj/Debug/net8.0/ref/LinkedinScrapper.dll
+/Users/rohitagarwal/Desktop/practice/pwc-test/LinkedinScrapper/bin/Debug/net8.0/selenium-manager/linux/selenium-manager
+/Users/rohitagarwal/Desktop/practice/pwc-test/LinkedinScrapper/bin/Debug/net8.0/selenium-manager/macos/selenium-manager
+/Users/rohitagarwal/Desktop/practice/pwc-test/LinkedinScrapper/bin/Debug/net8.0/selenium-manager/windows/selenium-manager.exe
+/Users/rohitagarwal/Desktop/practice/pwc-test/LinkedinScrapper/bin/Debug/net8.0/HtmlAgilityPack.dll
+/Users/rohitagarwal/Desktop/practice/pwc-test/LinkedinScrapper/bin/Debug/net8.0/Newtonsoft.Json.dll
+/Users/rohitagarwal/Desktop/practice/pwc-test/LinkedinScrapper/bin/Debug/net8.0/WebDriver.dll
