@@ -6,6 +6,9 @@
 /Users/rohitagarwal/Desktop/practice/pwc-test/LinkedinScrapper/bin/Debug/net8.0/LinkedinScrapper.dll
 /Users/rohitagarwal/Desktop/practice/pwc-test/LinkedinScrapper/bin/Debug/net8.0/LinkedinScrapper.pdb
 /Users/rohitagarwal/Desktop/practice/pwc-test/LinkedinScrapper/bin/Debug/net8.0/Microsoft.AspNetCore.OpenApi.dll
+/Users/rohitagarwal/Desktop/practice/pwc-test/LinkedinScrapper/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.dll
+/Users/rohitagarwal/Desktop/practice/pwc-test/LinkedinScrapper/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/rohitagarwal/Desktop/practice/pwc-test/LinkedinScrapper/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll
 /Users/rohitagarwal/Desktop/practice/pwc-test/LinkedinScrapper/bin/Debug/net8.0/Microsoft.OpenApi.dll
 /Users/rohitagarwal/Desktop/practice/pwc-test/LinkedinScrapper/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
 /Users/rohitagarwal/Desktop/practice/pwc-test/LinkedinScrapper/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
