@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "40iEoAhKHyogSiMapbLeXfEHZ4NLZraFWsJtbNWFZ48=",
+  "Source": "LinkedinScrapper",
+  "BasePath": "_content/LinkedinScrapper",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

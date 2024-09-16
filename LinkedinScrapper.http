@@ -1,0 +1,6 @@
+@LinkedinScrapper_HostAddress = http://localhost:5253
+
+GET {{LinkedinScrapper_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
