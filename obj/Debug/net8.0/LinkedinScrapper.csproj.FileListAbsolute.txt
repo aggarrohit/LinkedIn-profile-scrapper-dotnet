@@ -40,3 +40,4 @@
 /Users/rohitagarwal/Desktop/practice/pwc-test/LinkedinScrapper/bin/Debug/net8.0/HtmlAgilityPack.dll
 /Users/rohitagarwal/Desktop/practice/pwc-test/LinkedinScrapper/bin/Debug/net8.0/Newtonsoft.Json.dll
 /Users/rohitagarwal/Desktop/practice/pwc-test/LinkedinScrapper/bin/Debug/net8.0/WebDriver.dll
+/Users/rohitagarwal/Desktop/practice/pwc-test/LinkedinScrapper/obj/Debug/net8.0/LinkedinScrapper.sourcelink.json
