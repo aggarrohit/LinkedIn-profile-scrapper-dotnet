@@ -1,10 +1,4 @@
-
-
-using LinkedinScrapper.controllers;
-using LinkedinScrapper.Dtos;
 using LinkedinScrapper.Entities;
-using LinkedinScrapper.Mappers;
-using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace LinkedinScrapper.Repositories
 {
@@ -57,7 +51,7 @@ namespace LinkedinScrapper.Repositories
                 return existingItem;
             }
             throw new Exception("Assignment not found");
-            
+
         }
     }
 }

@@ -1,7 +1,4 @@
-
-
 using LinkedinScrapper.Entities;
-using LinkedinScrapper.Repositories;
 
 namespace LinkedinScrapper.Repositories
 {
@@ -11,7 +8,6 @@ namespace LinkedinScrapper.Repositories
 
         public ScrappedDataEntity Add(ScrappedDataEntity item)
         {
-            // Add the item to the database and return the item with the id
             var entity = _dbContext.ScrappedData.Add(item);
             _dbContext.SaveChanges();
             return entity.Entity;
@@ -23,6 +19,6 @@ namespace LinkedinScrapper.Repositories
             return _dbContext.ScrappedData.Where(x => x.AssignmentId == assignmentId);
         }
 
-       
+
     }
 }

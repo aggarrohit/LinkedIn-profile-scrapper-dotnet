@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LinkedinScrapper.Services
 {
-    
+
     public class AssignmentService(IAssignmentRepository assignmentRepository)
     {
 
@@ -25,7 +25,7 @@ namespace LinkedinScrapper.Services
 
         public ActionResult<AssignmentDto> Add(AssignmentCreateDto assignment)
         {
-            return  AssignmentMapper.ToAssignmentDto(_assignmentRepository.Add(AssignmentMapper.ToAssignmentEntity(assignment)));
+            return AssignmentMapper.ToAssignmentDto(_assignmentRepository.Add(AssignmentMapper.ToAssignmentEntity(assignment)));
         }
 
         [HttpDelete]

@@ -8,7 +8,5 @@ namespace LinkedinScrapper.Entities
         public string? Name { get; set; }
         public string? JobTitle { get; set; }
         public string? CompanyName { get; set; }
-
-    
     }
 }

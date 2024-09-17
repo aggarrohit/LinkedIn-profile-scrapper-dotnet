@@ -4,17 +4,19 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Repositories
 builder.Services.AddScoped<IAssignmentRepository, AssignmentRepository>();
 builder.Services.AddScoped<IScrappedDataRepository, ScrappedDataRepository>();
+
+// Services
 builder.Services.AddScoped<Scraper>();
 builder.Services.AddScoped<AssignmentService>();
 
+// Database
 builder.Services.AddDbContext<AssignmentDbContext>(opt =>
     opt.UseInMemoryDatabase("AssignmentDatabase"));
 
@@ -33,7 +35,3 @@ app.MapControllers();
 
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

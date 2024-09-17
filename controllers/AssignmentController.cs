@@ -1,8 +1,5 @@
 using LinkedinScrapper.Dtos;
-using LinkedinScrapper.Entities;
-using LinkedinScrapper.Repositories;
 using LinkedinScrapper.Services;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LinkedinScrapper.controllers
@@ -12,16 +9,14 @@ namespace LinkedinScrapper.controllers
     public class AssignmentController(AssignmentService assignmentService) : ControllerBase
     {
 
-        // IAssignmentRepository _assignmentRepository = assignmentRepository;
-
         [HttpGet]
         public ActionResult Get()
         {
             List<AssignmentDto> assignments = assignmentService.Get();
             return Ok(new
-                {
-                    assignments = assignments
-                }
+            {
+                assignments = assignments
+            }
             );
         }
 
@@ -44,7 +39,7 @@ namespace LinkedinScrapper.controllers
         }
 
         [HttpPut]
-        public ActionResult Update( [FromQuery]
+        public ActionResult Update([FromQuery]
             int id, AssignmentCreateDto assignment)
         {
             try

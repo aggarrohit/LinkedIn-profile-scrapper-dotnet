@@ -1,4 +1,3 @@
-using LinkedinScrapper.Dtos;
 using LinkedinScrapper.Entities;
 
 namespace LinkedinScrapper.Repositories

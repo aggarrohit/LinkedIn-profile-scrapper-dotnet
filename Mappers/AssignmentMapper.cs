@@ -19,8 +19,8 @@ namespace LinkedinScrapper.Mappers
             return new AssignmentDto
             {
                 Id = assignment.Id,
-                Name = assignment.Name,
-                Company = assignment.Company
+                Name = assignment.Name ?? "",
+                Company = assignment.Company ?? ""
             };
         }
     }
