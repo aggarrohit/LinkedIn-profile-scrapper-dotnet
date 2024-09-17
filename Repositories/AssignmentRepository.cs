@@ -1,7 +1,6 @@
 
 
 using LinkedinScrapper.Entities;
-using LinkedinScrapper.Repositories;
 
 namespace LinkedinScrapper.Repositories
 {

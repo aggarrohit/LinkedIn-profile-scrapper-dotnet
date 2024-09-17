@@ -24,15 +24,15 @@ public class Scraper(IScrappedDataRepository _scrappedDataRepository){
         chromeOptions.AddArgument("--disable-gpu"); // Disable GPU hardware acceleration
         chromeOptions.AddArgument("--no-sandbox"); // Disable sandboxing
 
-            using IWebDriver driver = new ChromeDriver(chromeOptions);
+            
             foreach (var profileLink in assignmentLinksDto.Links)
             {
              
             try
             {
+                using IWebDriver driver = new ChromeDriver(chromeOptions);
                 driver.Navigate().GoToUrl(profileLink);
                 var pageContent = driver.PageSource;
-                Console.WriteLine(pageContent);
 
 
                 // Load the page content into HtmlAgilityPack for parsing
@@ -68,18 +68,13 @@ public class Scraper(IScrappedDataRepository _scrappedDataRepository){
                         var jobTitles = person["jobTitle"]?.ToArray();
                         var worksFor = person["worksFor"]?.ToArray();
 
-                        // Output the extracted information
-                        Console.WriteLine($"Name: {name}");
-                        Console.WriteLine($"Location: {locality}, {country}");
-                        Console.WriteLine($"Profile Picture URL: {profilePicUrl}");
-
-                        Console.WriteLine("Job Titles:");
+                    
                         if (jobTitles != null && jobTitles.Length > 0)
                         {
                           scrappedData.CompanyName = StringUtils.ExtractJobTitle(jobTitles[0].ToString());
                         }
 
-                        Console.WriteLine("Companies:");
+                    
                         if (worksFor != null && worksFor.Length > 0)
                         {
                            scrappedData.JobTitle = worksFor[0]["name"]?.ToString() ?? "";
@@ -103,7 +98,7 @@ public class Scraper(IScrappedDataRepository _scrappedDataRepository){
                 Console.WriteLine($"An error occurred: {ex.Message}");
             }
             }
-            return scrappedDataRepository.GetAll(assignmentLinksDto.AssignmentId).ToList();
+            return [.. scrappedDataRepository.GetAll(assignmentLinksDto.AssignmentId)];
         }
 }
 }
