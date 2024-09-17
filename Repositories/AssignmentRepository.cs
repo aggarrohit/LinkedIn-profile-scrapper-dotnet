@@ -1,6 +1,9 @@
 
 
+using LinkedinScrapper.controllers;
+using LinkedinScrapper.Dtos;
 using LinkedinScrapper.Entities;
+using LinkedinScrapper.Mappers;
 using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace LinkedinScrapper.Repositories
@@ -9,10 +12,10 @@ namespace LinkedinScrapper.Repositories
     {
         private readonly AssignmentDbContext _dbContext = dbContext;
 
-        public AssignmentEntity Add(AssignmentEntity item)
+        public AssignmentEntity Add(AssignmentCreateDto item)
         {
             // Add the item to the database and return the item with the id
-            var entity = _dbContext.Assignments.Add(item);
+            var entity = _dbContext.Assignments.Add(AssignmentCreateMapper.Map(item));
             _dbContext.SaveChanges();
             return entity.Entity;
 

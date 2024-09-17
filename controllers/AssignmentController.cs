@@ -1,3 +1,4 @@
+using LinkedinScrapper.Dtos;
 using LinkedinScrapper.Entities;
 using LinkedinScrapper.Repositories;
 using LinkedinScrapper.Services;
@@ -25,12 +26,12 @@ namespace LinkedinScrapper.controllers
         }
 
         [HttpPost]
-        public ActionResult<AssignmentEntity> Add([FromBody] AssignmentEntity assignment)
+        public ActionResult<AssignmentEntity> Add([FromBody] AssignmentCreateDto assignment)
         {
             return Ok(
                 new
                 {
-                    assignment = assignmentService.Add(assignment)
+                    assignment = assignmentService.Add(assignment).Value
                 }
             );
         }

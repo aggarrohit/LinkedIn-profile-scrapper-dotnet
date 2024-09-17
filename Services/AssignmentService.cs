@@ -1,3 +1,4 @@
+using LinkedinScrapper.Dtos;
 using LinkedinScrapper.Entities;
 using LinkedinScrapper.Repositories;
 using Microsoft.AspNetCore.Mvc;
@@ -21,7 +22,7 @@ namespace LinkedinScrapper.Services
             return _assignmentRepository.GetById(id);
         }
 
-        public ActionResult<AssignmentEntity> Add(AssignmentEntity assignment)
+        public ActionResult<AssignmentEntity> Add(AssignmentCreateDto assignment)
         {
             return  _assignmentRepository.Add(assignment);
         }
