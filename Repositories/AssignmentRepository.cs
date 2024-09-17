@@ -1,6 +1,7 @@
 
 
 using LinkedinScrapper.Entities;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace LinkedinScrapper.Repositories
 {
@@ -32,14 +33,14 @@ namespace LinkedinScrapper.Repositories
             return _dbContext.Assignments;
         }
 
-        public AssignmentEntity GetById(int id)
+        public AssignmentEntity? GetById(int id)
         {
             var existingItem = _dbContext.Assignments.FirstOrDefault(x => x.Id == id);
             if (existingItem != null)
             {
                 return existingItem;
             }
-            throw new Exception("Assignment not found");
+            return null;
         }
 
         public AssignmentEntity Update(int id, AssignmentEntity item)

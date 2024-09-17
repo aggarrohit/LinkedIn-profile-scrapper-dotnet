@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LinkedinScrapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+db9d30a650ca919a9fc9db39e082071f3d8c036c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+39d512dfa78145d523a51a216b5447dce1e86dc5")]
 [assembly: System.Reflection.AssemblyProductAttribute("LinkedinScrapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LinkedinScrapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

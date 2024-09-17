@@ -9,6 +9,6 @@ namespace LinkedinScrapper.Repositories
         AssignmentEntity Update(int id, AssignmentEntity item);
         IQueryable<AssignmentEntity> GetAll();
 
-        AssignmentEntity GetById(int id);
+        AssignmentEntity? GetById(int id);
     }
 }
