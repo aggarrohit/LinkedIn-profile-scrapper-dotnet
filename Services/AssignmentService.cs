@@ -1,5 +1,6 @@
 using LinkedinScrapper.Dtos;
 using LinkedinScrapper.Entities;
+using LinkedinScrapper.Mappers;
 using LinkedinScrapper.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,10 +12,10 @@ namespace LinkedinScrapper.Services
 
         IAssignmentRepository _assignmentRepository = assignmentRepository;
 
-        public List<AssignmentEntity> Get()
+        public List<AssignmentDto> Get()
         {
             List<AssignmentEntity> assignments = [.. _assignmentRepository.GetAll()];
-            return assignments;
+            return assignments.Select(AssignmentMapper.ToAssignmentDto).ToList();
         }
 
         public AssignmentEntity GetById(int id)
@@ -22,9 +23,9 @@ namespace LinkedinScrapper.Services
             return _assignmentRepository.GetById(id);
         }
 
-        public ActionResult<AssignmentEntity> Add(AssignmentCreateDto assignment)
+        public ActionResult<AssignmentDto> Add(AssignmentCreateDto assignment)
         {
-            return  _assignmentRepository.Add(assignment);
+            return  AssignmentMapper.ToAssignmentDto(_assignmentRepository.Add(AssignmentMapper.ToAssignmentEntity(assignment)));
         }
 
         [HttpDelete]
@@ -34,12 +35,12 @@ namespace LinkedinScrapper.Services
             return true;
         }
 
-        public AssignmentEntity Update(int id, AssignmentEntity assignment)
+        public AssignmentDto Update(int id, AssignmentCreateDto assignment)
         {
             try
             {
-                AssignmentEntity updatedAssignment = _assignmentRepository.Update(id, assignment);
-                return updatedAssignment;
+                AssignmentEntity updatedAssignment = _assignmentRepository.Update(id, AssignmentMapper.ToAssignmentEntity(assignment));
+                return AssignmentMapper.ToAssignmentDto(updatedAssignment);
             }
             catch (Exception e)
             {

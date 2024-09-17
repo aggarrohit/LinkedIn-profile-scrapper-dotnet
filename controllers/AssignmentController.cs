@@ -17,7 +17,7 @@ namespace LinkedinScrapper.controllers
         [HttpGet]
         public ActionResult Get()
         {
-            List<AssignmentEntity> assignments = assignmentService.Get();
+            List<AssignmentDto> assignments = assignmentService.Get();
             return Ok(new
                 {
                     assignments = assignments
@@ -26,7 +26,7 @@ namespace LinkedinScrapper.controllers
         }
 
         [HttpPost]
-        public ActionResult<AssignmentEntity> Add([FromBody] AssignmentCreateDto assignment)
+        public ActionResult Add([FromBody] AssignmentCreateDto assignment)
         {
             return Ok(
                 new
@@ -45,11 +45,11 @@ namespace LinkedinScrapper.controllers
 
         [HttpPut]
         public ActionResult Update( [FromQuery]
-            int id, AssignmentEntity assignment)
+            int id, AssignmentCreateDto assignment)
         {
             try
             {
-                AssignmentEntity updatedAssignment = assignmentService.Update(id, assignment);
+                AssignmentDto updatedAssignment = assignmentService.Update(id, assignment);
                 return Ok(updatedAssignment);
             }
             catch (Exception e)

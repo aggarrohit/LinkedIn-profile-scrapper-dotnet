@@ -12,10 +12,10 @@ namespace LinkedinScrapper.Repositories
     {
         private readonly AssignmentDbContext _dbContext = dbContext;
 
-        public AssignmentEntity Add(AssignmentCreateDto item)
+        public AssignmentEntity Add(AssignmentEntity item)
         {
             // Add the item to the database and return the item with the id
-            var entity = _dbContext.Assignments.Add(AssignmentCreateMapper.Map(item));
+            var entity = _dbContext.Assignments.Add(item);
             _dbContext.SaveChanges();
             return entity.Entity;
 
