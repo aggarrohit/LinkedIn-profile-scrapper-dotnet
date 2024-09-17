@@ -18,7 +18,7 @@ namespace LinkedinScrapper.Services
             return assignments.Select(AssignmentMapper.ToAssignmentDto).ToList();
         }
 
-        public AssignmentEntity GetById(int id)
+        public AssignmentEntity? GetById(int id)
         {
             return _assignmentRepository.GetById(id);
         }
