@@ -31,8 +31,7 @@ namespace LinkedinScrapper.controllers
             return Ok(
                 new
                 {
-                    assignmentId= assignmentLinksDto.AssignmentId,
-                    assignment = assignment,
+                    assignment,
                     scrappedData = data
                 }
             );
