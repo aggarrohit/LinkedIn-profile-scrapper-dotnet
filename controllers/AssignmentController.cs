@@ -1,5 +1,6 @@
 using LinkedinScrapper.Entities;
 using LinkedinScrapper.Repositories;
+using LinkedinScrapper.Services;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,15 +8,15 @@ namespace LinkedinScrapper.controllers
 {
     [ApiController]
     [Route("/api/[controller]")]
-    public class AssignmentController(IAssignmentRepository assignmentRepository) : ControllerBase
+    public class AssignmentController(AssignmentService assignmentService) : ControllerBase
     {
 
-        IAssignmentRepository _assignmentRepository = assignmentRepository;
+        // IAssignmentRepository _assignmentRepository = assignmentRepository;
 
         [HttpGet]
         public ActionResult Get()
         {
-            List<AssignmentEntity> assignments = [.. _assignmentRepository.GetAll()];
+            List<AssignmentEntity> assignments = assignmentService.Get();
             return Ok(new
                 {
                     assignments = assignments
@@ -29,7 +30,7 @@ namespace LinkedinScrapper.controllers
             return Ok(
                 new
                 {
-                    assignment = _assignmentRepository.Add(assignment)
+                    assignment = assignmentService.Add(assignment)
                 }
             );
         }
@@ -37,7 +38,7 @@ namespace LinkedinScrapper.controllers
         [HttpDelete]
         public ActionResult Delete([FromQuery] int id)
         {
-            _assignmentRepository.Delete(id);
+            assignmentService.Delete(id);
             return Ok();
         }
 
@@ -47,7 +48,7 @@ namespace LinkedinScrapper.controllers
         {
             try
             {
-                AssignmentEntity updatedAssignment = _assignmentRepository.Update(id, assignment);
+                AssignmentEntity updatedAssignment = assignmentService.Update(id, assignment);
                 return Ok(updatedAssignment);
             }
             catch (Exception e)

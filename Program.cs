@@ -13,6 +13,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IAssignmentRepository, AssignmentRepository>();
 builder.Services.AddScoped<IScrappedDataRepository, ScrappedDataRepository>();
 builder.Services.AddScoped<Scraper>();
+builder.Services.AddScoped<AssignmentService>();
 
 builder.Services.AddDbContext<AssignmentDbContext>(opt =>
     opt.UseInMemoryDatabase("AssignmentDatabase"));
