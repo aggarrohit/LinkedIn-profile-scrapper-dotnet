@@ -29,7 +29,6 @@ namespace LinkedinScrapper.Services
 
             foreach (var profileLink in assignmentLinksDto.Links)
             {
-
                 try
                 {
                     using IWebDriver driver = new ChromeDriver(chromeOptions);

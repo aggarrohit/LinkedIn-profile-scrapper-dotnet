@@ -6,7 +6,6 @@ namespace LinkedinScrapper.Repositories
     {
         ScrappedDataEntity Add(ScrappedDataEntity item);
 
-        // get all scrapped data entries for a specific assignment
         IQueryable<ScrappedDataEntity> GetAll(int assignmentId);
     }
 }
