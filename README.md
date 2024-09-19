@@ -17,6 +17,13 @@
     4. Get all assignments
     5. add linkedin profile urls to an assignment and get profile details like name, company and job title
 
+### Scraping Details
+
+    1. System opens chrome browser in headless mode
+    2. Navigates to user's profile
+    3. Extracts user's public profile data
+    4. Parse data into required format
+
 ### Access APIs
 
     After running the project, APIs could be accessed via swagger on the given url
