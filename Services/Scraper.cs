@@ -23,7 +23,7 @@ namespace LinkedinScrapper.Services
 
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArgument("--headless"); // Run in headless mode
-            chromeOptions.AddArgument("--disable-gpu"); // Disable GPU hardware acceleration
+            chromeOptions.AddArgument("--disable-gpu"); // For fast reading of the page
             chromeOptions.AddArgument("--no-sandbox"); // Disable sandboxing
 
 
