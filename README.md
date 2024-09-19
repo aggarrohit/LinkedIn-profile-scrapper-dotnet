@@ -24,6 +24,12 @@
     3. Extracts user's public profile data
     4. Parse data into required format
 
+### Libraries used for scraping
+
+    1. HtmlAgilityPack
+    2. Selenium.WebDriver
+    3. Selenium.WebDriver.ChromeDriver
+
 ### Access APIs
 
     After running the project, APIs could be accessed via swagger on the given url
