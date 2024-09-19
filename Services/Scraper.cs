@@ -59,11 +59,8 @@ namespace LinkedinScrapper.Services
                             ScrappedDataEntity scrappedData = new();
                             scrappedData.AssignmentId = assignmentLinksDto.AssignmentId;
                             scrappedData.LinkedinUrl = profileLink;
-                            string name = person["name"]?.ToString();
+                            string? name = person["name"]?.ToString();
                             scrappedData.Name = name;
-                            string locality = person["address"]?["addressLocality"]?.ToString();
-                            string country = person["address"]?["addressCountry"]?.ToString();
-                            string profilePicUrl = person["image"]?["contentUrl"]?.ToString();
 
                             // Extracting job titles and company names
                             var jobTitles = person["jobTitle"]?.ToArray();
@@ -72,30 +69,31 @@ namespace LinkedinScrapper.Services
 
                             if (jobTitles != null && jobTitles.Length > 0)
                             {
-                                scrappedData.CompanyName = StringUtils.ExtractJobTitle(jobTitles[0].ToString());
+                                scrappedData.JobTitle = StringUtils.ExtractJobTitle(jobTitles[0].ToString());
                             }
 
 
                             if (worksFor != null && worksFor.Length > 0)
                             {
-                                scrappedData.JobTitle = worksFor[0]["name"]?.ToString() ?? "";
+
+                                scrappedData.CompanyName = worksFor[0]["name"]?.ToString() ?? "";
                             }
 
                             scrappedDataRepository.Add(scrappedData);
                         }
                         else
                         {
-                            Console.WriteLine("Could not find person information in JSON-LD.");
+                            Console.WriteLine("Could not find person information in JSON-LD " + profileLink);
                         }
                     }
                     else
                     {
-                        Console.WriteLine("No JSON-LD data found in the profile.");
+                        Console.WriteLine("No JSON-LD data found in the profile " + profileLink);
                     }
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"An error occurred: {ex.Message}");
+                    Console.WriteLine($"An error occurred: {ex.Message} " + profileLink);
                 }
             }
             return [.. scrappedDataRepository.GetAll(assignmentLinksDto.AssignmentId)];

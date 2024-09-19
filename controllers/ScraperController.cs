@@ -25,7 +25,7 @@ namespace LinkedinScrapper.controllers
                 new
                 {
                     assignment,
-                    scrappedData = data
+                    candidates = data
                 }
             );
         }
